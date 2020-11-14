@@ -4,21 +4,24 @@ public class Main {
 		
 		Scanner input = new Scanner(System.in);
 		
-		int num1, num2, num3, num4, num5, count = 0;
+		int [] array = new int [10];
+		int A, B, C, num, num1 = 10, num2 = 0, num3 = 0;
 		
-		num1 = input.nextInt();
-		num5 = num1;
-		while(true) {
-			count += 1;
-			num3 = num5 % 10;	
-			num2 = (num5 - num3) / 10;
-			num4 = num2 + num3;
-			num2 = num3 * 10;
-			num3 = num4 % 10;
-			num5 = num2 + num3;
-			if (num5 == num1) {
-				break;
-			}
-		} System.out.println(count);
+		A = input.nextInt();	B = input.nextInt(); 	C = input.nextInt();
+		
+		num = A * B * C;
+		
+		for (int i = 0; i <= (int)Math.log10(num); i++) {
+			num2 = (num % num1 - num3) / (num1 / 10);
+			for (int ii = 0; ii < array.length; ii++) {
+				if (num2 == ii) {
+					array[ii] += 1;	break;
+				}
+			} num3 += (num2 * num1) / 10;	num1 *= 10;
+		} for (int i = 0; i < array.length; i++) {
+			System.out.println(array[i]);
+		}
+		
 	}
+
 }
