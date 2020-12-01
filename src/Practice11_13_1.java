@@ -22,7 +22,7 @@ public class Practice11_13_1 {
 		for (int i = 0; i < num_list.length; i++) {
 			if(i % 5 == 0 && i != 0) {
 				System.out.println();
-			} if(num_list[i] >= 26)
+ 			} if(num_list[i] >= 26)
 				System.out.print("*  ");
 			else if(num_list[i] >= 10) 
 				System.out.print(num_list[i] + " ");
