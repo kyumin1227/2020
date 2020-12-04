@@ -2,41 +2,39 @@ import java.util.Scanner;
 public class Main {
 	public static void main(String[] args) {
 		
-		Scanner input = new Scanner(System.in);
+		int array [] = new int [10001];
 		
-		int[] array = new int [10];
-		int count = 0, count2 = 0, count0 = 0, num;
+		int n;
 		
-		//수 받기
-		for(int i = 0; i < array.length; i++) {
-			array[i] = input.nextInt();
-		}
-		
-		int[] array2 = new int[array.length];
-		
-		//배열1의 i번째 값을 42로 나누어서 배열2에 저장된 값과 비교하여 같으면 count2 를 증가시킴 
-		for(int i = 0; i < array.length; i++) {
-			num = array[i] % 42;
-			for(int ii = 0; ii < array2.length; ii++) {
-				if(num == array2[ii]) {
-					count2 += 1;
+		for(n = 0; n < 10000; n++) {
+			for(int i = 0; i < array.length; i++) {
+				if(d(n) == i) {
+					array[i] = 1;
 				}
-			} 
-			//count2가 0일 경우 겹치지 않는다고 판단하여 count를 증가시키고 배열2에 해당 값을 추가
-			if(count2 == 0) {
-				array2[count] = num;
-				count+=1;
 			}
-			//0이 처음 나올 경우 count 1 증가
-			if(num == 0 && count0 == 0) {
-				count+=1;
-				count0+=1;
-			}
-			count2 = 0;
 		}
 		
-		System.out.println(count);
+		for(int i = 0; i < array.length; i++) {
+			if(array[i] == 0) {
+				System.out.println(i);
+			}
+		}
 		
+		
+		
+	}
+	
+	static int d(int n) {
+		int num0, num1, num2, num3, num4;
+		
+		num0 = n % 10;
+		num1 = n % 100 - num0;
+		num2 = n % 1000 - num0 - num1;
+		num3 = n % 10000 - num0 - num1 - num2;
+		
+		num4 = n + num0 + (num1 / 10) + (num2 / 100) + (num3 / 1000);
+		
+		return num4;
 	}
 
 }
