@@ -1,9 +1,13 @@
+import java.util.Scanner;
 public class Test {
-    long sum(int[] a) {
-        long ans = 0;
-        for (int i = 0; i < a.length; i++) {
-            ans += a[i];
-        }
-        return ans;
-    }
+	public static void main (String [] args) {
+		
+		Scanner input = new Scanner(System.in);
+		
+		char ch = input.nextLine().charAt(0);
+		int num = (int)ch;
+		
+		System.out.println(num);
+		
+	}
 }

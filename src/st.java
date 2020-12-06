@@ -1,6 +1,6 @@
 import java.util.*;
 public class st {
-
+//정세형 코드
    public static void main(String[] args) {
       Random ra=new Random();
       int zoo;
