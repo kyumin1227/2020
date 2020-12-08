@@ -2,24 +2,20 @@ import java.util.Scanner;
 public class Main {
 	public static void main (String [] args) {
 		
-		Scanner input = new Scanner (System.in);
+		Scanner input = new Scanner(System.in);
 		
-		int grade;
+		int num;
 		
-		grade = input.nextInt();
+		num = input.nextInt();
 		
-		if (grade > 100) {
-			
-		} else if (grade <= 100 && grade >= 90) {
-			System.out.println("A");
-		} else if (grade >= 80) {
-			System.out.println("B");
-		} else if (grade >= 70) {
-			System.out.println("C");
-		} else if (grade >= 60) {
-			System.out.println("D");
-		} else {
-			System.out.println("F");
+		int array [] = new int [num + 1];
+		
+		array[0] = 0;
+		array[1] = 1;
+		
+		for(int i = 2; i <= num; i++) {
+			array[i] = array[i - 1] + array[i - 2];
 		}
+		System.out.println(array[num]);
 	}
 }
