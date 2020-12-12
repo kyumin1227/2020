@@ -15,11 +15,8 @@ public class Main {
 			array[i] = input.next();
 		}
 		for (int i = 0; i < T; i++) {
-			char [] array2 = new char [array[i].length()];
-			for (int j = 0; j < array[i].length(); j++) {
-				array2[j] = array[i].charAt(j);
-			} for (int j = 0; j < array[i].length() / 2; j++) {
-				if (array2[j] == array2[array[i].length() - 1 - j]) {
+			for (int j = 0; j < array[i].length() / 2; j++) {
+				if (array[i].charAt(j) == array[i].charAt(array[i].length() - 1 - j)) {
 
 				} else {
 					array3[i] = 1;
@@ -29,9 +26,7 @@ public class Main {
 		for (int i = 0; i < T; i++) {
 			int num1 = 0, num2 = 0, count2 = 0;
 			if (array3[i] == 1) {
-				char [] array2 = new char [array[i].length()];
 				for (int j = 0; j < array[i].length(); j++) {
-					array2[j] = array[i].charAt(j);
 				} for (int j = 0; j < array[i].length(); j++) {
 					int count = 0;
 					num1 = 0;
@@ -43,7 +38,7 @@ public class Main {
 						} else if (ii == array[i].length() - j - 1 && j > array[i].length() / 2) {
 							num1 = 0;
 							num2 = 1;
-						} if (array2[ii + num1] == array2[array[i].length() - ii - 1 - num2]) {
+						} if (array[i].charAt(ii + num1) == array[i].charAt(array[i].length() - ii - 1 - num2)) {
 							
 						} else {
 							count += 1;
